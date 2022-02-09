@@ -10,5 +10,5 @@ NotesApp is build by Andriod MVVM Architecture, using these component librarys o
 ![image](https://github.com/Liuyiwem/pic/blob/main/note/2.JPG)
 ![image](https://github.com/Liuyiwem/pic/blob/main/note/4.JPG)
 ![image](https://github.com/Liuyiwem/pic/blob/main/note/5.JPG)
-![image](https://github.com/Liuyiwem/pic/blob/main/note/7.JPG)
-![image](https://github.com/Liuyiwem/pic/blob/main/note/8.JPG)
+
+
