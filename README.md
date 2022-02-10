@@ -9,7 +9,7 @@ This app was build by Andriod MVVM Architecture, using these component librarys 
 * LiveData
 * ViewModel
 * Room
-
+# Architecture
 ![image](https://github.com/Liuyiwem/pic/blob/main/note/10.JPG)
 
 [The souce of this picture : https://developer.android.com/]
