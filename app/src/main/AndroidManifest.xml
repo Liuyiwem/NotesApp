@@ -10,11 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ArchitectureExample">
         <activity
-            android:name="com.example.NotesApp.AddEditNoteActivity"
-            android:parentActivityName="com.example.NotesApp.MainActivity"
+            android:name="com.example.NotesApp.Activity.AddEditNoteActivity"
+            android:parentActivityName="com.example.NotesApp.Activity.MainActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.NotesApp.MainActivity"
+            android:name="com.example.NotesApp.Activity.MainActivity"
             android:launchMode="singleTop"
             android:exported="true">
             <intent-filter>

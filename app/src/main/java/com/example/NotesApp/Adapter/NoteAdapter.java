@@ -1,4 +1,4 @@
-package com.example.NotesApp;
+package com.example.NotesApp.Adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.NotesApp.Database.Note;
+import com.example.NotesApp.R;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -19,6 +22,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteHolder> im
     private List<Note> newList;
     private OnItemClickListener listener;
 
+    //Creat holder
     @NonNull
     @Override
     public NoteHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -27,16 +31,12 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteHolder> im
         return new NoteHolder(itemView);
     }
 
-
-
-
-
+//Give recycle holder & position
     @Override
     public void onBindViewHolder(@NonNull NoteHolder holder, int position) {
         Note currentNote = notes.get(position);
         holder.textViewTitle.setText(currentNote.getTitle());
         holder.textViewTimeStamp.setText(currentNote.getTimeStamp());
-//        holder.textViewDescription.setText(currentNote.getDescription());
         holder.textViewPriority.setText(String.valueOf(currentNote.getPriority()));
 
     }
@@ -89,29 +89,22 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteHolder> im
             notes.clear();
             notes.addAll((Collection<? extends Note>) results.values);
             notifyDataSetChanged();
-
         }
     };
 
-
+//Include the view item
     class NoteHolder extends RecyclerView.ViewHolder {
         private TextView textViewTitle;
-//        private TextView textViewDescription;
         private TextView textViewPriority;
         private TextView textViewTimeStamp;
 
-
+//Relationship of view
         public NoteHolder(@NonNull View itemView) {
             super(itemView);
             textViewTitle = itemView.findViewById(R.id.text_view_title);
-//            textViewDescription = itemView.findViewById(R.id.text_view_description);
             textViewTimeStamp = itemView.findViewById(R.id.text_view_timeStamp);
-
-
             textViewPriority = itemView.findViewById(R.id.text_view_priority);
-
 //Edit note listener
-
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -127,7 +120,6 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteHolder> im
 //Edit note
     public interface OnItemClickListener {
         void onItemCLick(Note note);
-
 
     }
 

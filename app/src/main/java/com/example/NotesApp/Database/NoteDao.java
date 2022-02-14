@@ -1,4 +1,4 @@
-package com.example.NotesApp;
+package com.example.NotesApp.Database;
 
 
 import androidx.lifecycle.LiveData;
@@ -13,7 +13,6 @@ import java.util.List;
 @Dao
 public interface NoteDao {
 
-
     @Insert
     void insert(Note note);
 
@@ -26,7 +25,7 @@ public interface NoteDao {
     @Query("DELETE FROM note_table")
     void deleteAllNotes();
 
-    @Query("SELECT * FROM note_table ORDER BY priority DESC") //SQL 對 priority排序
-    LiveData<List<Note>>getAllNotes();
+    @Query("SELECT * FROM note_table ORDER BY priority DESC")
+    LiveData<List<Note>> getAllNotes();
 
 }

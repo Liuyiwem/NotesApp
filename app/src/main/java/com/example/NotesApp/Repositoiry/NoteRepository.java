@@ -1,9 +1,13 @@
-package com.example.NotesApp;
+package com.example.NotesApp.Repositoiry;
 
 import android.app.Application;
 import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
+
+import com.example.NotesApp.Database.Note;
+import com.example.NotesApp.Database.NoteDao;
+import com.example.NotesApp.Database.NoteDatabase;
 
 import java.util.List;
 
@@ -33,22 +37,19 @@ public class NoteRepository {
 
     }
 
-
     public LiveData<List<Note>> getAllNotes() {
-
         return allNotes;
     }
-    private static class InsertNoteAsyncTask extends AsyncTask<Note, Void, Void> {       //輸入Note 調用Dao方法
+    private static class InsertNoteAsyncTask extends AsyncTask<Note, Void, Void> {
         private NoteDao noteDao;
 
         private InsertNoteAsyncTask(NoteDao noteDao){
-
-            this.noteDao = noteDao;   //賦值給成員變量
+            this.noteDao = noteDao;
         }
 
         @Override
         protected Void doInBackground(Note... notes) {
-            noteDao.insert(notes[0]);  //Use Dao interfece to insert note
+            noteDao.insert(notes[0]);
             return null;
         }
     }
@@ -57,7 +58,6 @@ public class NoteRepository {
         private NoteDao noteDao;
 
         private UpdateNoteAsyncTask(NoteDao noteDao){
-
             this.noteDao = noteDao;
         }
 
@@ -71,7 +71,6 @@ public class NoteRepository {
         private NoteDao noteDao;
 
         private DeleteNoteAsyncTask(NoteDao noteDao){
-
             this.noteDao = noteDao;
         }
 
@@ -85,7 +84,6 @@ public class NoteRepository {
         private NoteDao noteDao;
 
         private DeleteAllNotesAsyncTask(NoteDao noteDao){
-
             this.noteDao = noteDao;
         }
 

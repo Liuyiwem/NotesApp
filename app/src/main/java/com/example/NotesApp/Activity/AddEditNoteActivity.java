@@ -1,4 +1,4 @@
-package com.example.NotesApp;
+package com.example.NotesApp.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,21 +12,23 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.NotesApp.R;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
 public class AddEditNoteActivity extends AppCompatActivity {
     public static final String EXTRA_ID =
-            "com.example.architectureexample.EXTRA_ID";
+            "EXTRA_ID";
     public static final String EXTRA_TITLE =
-            "com.example.architectureexample.EXTRA_TITLE";
+            "EXTRA_TITLE";
     public static final String EXTRA_TIMESTAMP =
-            "com.example.architectureexample.EXTRA_TIMESTAMP";
+            "EXTRA_TIMESTAMP";
     public static final String EXTRA_DESCRIPTION =
-            "com.example.architectureexample.EXTRA_DESCRIPTION";
+            "EXTRA_DESCRIPTION";
     public static final String EXTRA_PRIORITY =
-            "com.example.architectureexample.EXTRA_PRIORITY";
+            "EXTRA_PRIORITY";
 
     private EditText editTextTitle;
     private EditText editTextDescription;
@@ -37,29 +39,24 @@ public class AddEditNoteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_note);
 
-
-
         editTextTitle = findViewById(R.id.edit_text_title);
         editTextDescription = findViewById(R.id.edit_text_description);
         numberPickerPriority = findViewById(R.id.number_picker_priority);
-
         numberPickerPriority.setMinValue(1);
         numberPickerPriority.setMaxValue(10);
-
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
 
 // Edit note Opened
         Intent intent = getIntent();
 
-        if (intent.hasExtra(EXTRA_ID)){
+        if (intent.hasExtra(EXTRA_ID)) {
             setTitle("Edit Note");
             editTextTitle.setText(intent.getStringExtra(EXTRA_TITLE));
-
             editTextDescription.setText(intent.getStringExtra(EXTRA_DESCRIPTION));
             numberPickerPriority.setValue(intent.getIntExtra(EXTRA_PRIORITY, 1));
 
-        }else {
-        setTitle("Add Note");
+        } else {
+            setTitle("Add Note");
         }
     }
 
@@ -68,37 +65,27 @@ public class AddEditNoteActivity extends AppCompatActivity {
         SimpleDateFormat sdf = new SimpleDateFormat("dd MMM, yyyy HH:mm");
         Date dt = new Date();
         String currentTime = sdf.format(dt);
-
-
-
         String title = editTextTitle.getText().toString();
         String description = editTextDescription.getText().toString();
         int priority = numberPickerPriority.getValue();
-
 
         if (title.trim().isEmpty() || description.trim().isEmpty()) {
             Toast.makeText(this, "Please insert a title and description",
                     Toast.LENGTH_SHORT).show();
             return;
         }
-
-
         Intent data = new Intent();
-        data.putExtra(EXTRA_TITLE,title);
+        data.putExtra(EXTRA_TITLE, title);
         data.putExtra(EXTRA_DESCRIPTION, description);
         data.putExtra(EXTRA_PRIORITY, priority);
         data.putExtra(EXTRA_TIMESTAMP, currentTime);
+        int id = getIntent().getIntExtra(EXTRA_ID, -1);
 
-        int id = getIntent().getIntExtra(EXTRA_ID,-1);
-        if(id != -1){
-            data.putExtra(EXTRA_ID,id);
+        if (id != -1) {
+            data.putExtra(EXTRA_ID, id);    //put extra id to intent
         }
-
-        setResult(RESULT_OK,data);
+        setResult(RESULT_OK, data);
         finish();
-
-
-
     }
 
     @Override
@@ -117,6 +104,5 @@ public class AddEditNoteActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
-
     }
 }

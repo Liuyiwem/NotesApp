@@ -14,7 +14,9 @@
         <entry key="..\:/Users/Liu/AndroidStudioProjects/ArchitectureExample/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2682291666666667" />
         <entry key="..\:/Users/Liu/AndroidStudioProjects/NotesApp/app/src/main/res/drawable/ic_add.xml" value="0.25833333333333336" />
         <entry key="..\:/Users/Liu/AndroidStudioProjects/NotesApp/app/src/main/res/drawable/ic_search_black_24dp.xml" value="0.25833333333333336" />
+        <entry key="..\:/Users/Liu/AndroidStudioProjects/NotesApp/app/src/main/res/layout/activity_add_note.xml" value="0.17481884057971014" />
         <entry key="..\:/Users/Liu/AndroidStudioProjects/NotesApp/app/src/main/res/layout/activity_main.xml" value="0.1621376811594203" />
+        <entry key="..\:/Users/Liu/AndroidStudioProjects/NotesApp/app/src/main/res/layout/note_item.xml" value="0.1" />
         <entry key="..\:/Users/Liu/AndroidStudioProjects/NotesApp/app/src/main/res/menu/add_note_menu.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/Liu/AndroidStudioProjects/NotesApp/app/src/main/res/menu/main_menu.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/Liu/AndroidStudioProjects/NotesApp/app/src/main/res/menu/search_notes.xml" value="0.25364583333333335" />

@@ -1,4 +1,4 @@
-package com.example.NotesApp;
+package com.example.NotesApp.Database;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -14,14 +14,8 @@ public class Note {
     private String description;
 
     private String timeStamp;
-//    @ColumnInfo(name = "priority_column")
-    private int priority;
 
-//    public Note(String title, String description, int priority) {
-//        this.title = title;
-//        this.description = description;
-//        this.priority = priority;
-//    }
+    private int priority;
 
     public Note(String title, String description, String timeStamp, int priority) {
         this.title = title;
